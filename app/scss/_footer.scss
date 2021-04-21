@@ -1,0 +1,58 @@
+#footer {
+  background-color: $darkBlue;
+}
+.footer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $white;
+  @include breakpoint-up(tablet) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "logo links cta"
+      "socmed links cta";
+    justify-content: start;
+    align-items: start;
+    text-align: left;
+  }
+  > div {
+    margin: 1rem 0;
+  }
+
+  &__logo {
+    @include breakpoint-up(tablet) {
+      grid-area: logo;
+    }
+  }
+
+  &__socmed {
+    @include breakpoint-up(tablet) {
+      grid-area: socmed;
+    }
+  }
+  &__links {
+    @include breakpoint-up(tablet) {
+      grid-area: links;
+      display: flex;
+      gap: 1rem;
+    }
+    a {
+      display: block;
+      color: $white;
+      font-size: $font-sm;
+      line-height: 1.5;
+    }
+  }
+
+  &__cta {
+    .copyright {
+      font-size: $font-sm;
+      margin-top: 1rem;
+    }
+    @include breakpoint-up(tablet) {
+      grid-area: cta;
+    }
+  }
+}

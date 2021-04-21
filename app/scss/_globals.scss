@@ -1,0 +1,96 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.25;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 300;
+  font-size: $font-md;
+  color: $grayishBlue;
+  overflow-x: hidden;
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+
+  &-p {
+    padding: 2.25rem 1.5rem;
+  }
+  &-px {
+    padding: 0 2.25rem;
+  }
+  &-py {
+    padding: 1.5rem 0;
+  }
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+// buttons
+.button {
+  background: linear-gradient(to right, $limeGreen, $brightCyan);
+  padding: $font-sm/2 $font-sm;
+  border-radius: 1rem;
+  transition: 0.75s;
+  font-size: $font-sm;
+  color: white;
+  display: inline-block;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+// visibilities
+.hide-for-mobile {
+  @include breakpoint-down(mobile) {
+    display: none;
+  }
+}
+
+.hide-for-laptop {
+  @include breakpoint-up(mobile) {
+    display: none;
+  }
+}

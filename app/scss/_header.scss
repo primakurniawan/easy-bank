@@ -1,0 +1,97 @@
+.header {
+  nav {
+    padding: 1rem;
+  }
+
+  &__toggle {
+    > span {
+      display: block;
+      height: 0.25rem;
+      background-color: $darkBlue;
+      width: 1.5rem;
+      transition: 0.3s;
+
+      &:not(:last-child) {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+
+  &__links {
+    > a {
+      font-size: $font-sm;
+      color: $grayishBlue;
+      position: relative;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        color: $darkBlue;
+
+        &::after {
+          content: "";
+          width: 100%;
+          height: 0.25rem;
+          background: linear-gradient(to right, $limeGreen, $brightCyan);
+          position: absolute;
+          bottom: -1.5rem;
+          right: -1rem;
+          left: 0;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .overlay {
+    // display: block;
+    visibility: hidden;
+    position: fixed;
+    top: 3rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient($darkBlue, transparent);
+  }
+
+  &.open {
+    .header__toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+        transform-origin: center left;
+      }
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+      > span:last-child {
+        transform: rotate(-45deg);
+        transform-origin: center left;
+      }
+    }
+
+    .overlay {
+      visibility: visible;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background: $white;
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    // margin: 1rem auto;
+    border-radius: 5px;
+    a {
+      display: block;
+      margin: 1rem auto;
+      text-align: center;
+      font-weight: 700;
+      color: $darkBlue;
+      margin-top: 1rem;
+    }
+  }
+}
