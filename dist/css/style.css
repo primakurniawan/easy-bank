@@ -105,7 +105,7 @@ h3 {
 }
 
 .container-py {
-  padding: 1.5rem 0;
+  padding: 2.5rem 0;
 }
 
 a,
@@ -264,7 +264,7 @@ a:visited {
   margin-top: 1rem;
 }
 
-.hero {
+#hero {
   background: #fafafa;
 }
 
@@ -322,7 +322,6 @@ a:visited {
 
 .hero__text {
   text-align: center;
-  padding: 1rem;
 }
 
 @media (min-width: 415px) {
@@ -333,6 +332,7 @@ a:visited {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+    text-align: left;
   }
 }
 

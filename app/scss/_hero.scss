@@ -1,6 +1,8 @@
-.hero {
+#hero {
   background: $veryLightGray;
+}
 
+.hero {
   @include breakpoint-up(mobile) {
     display: flex;
   }
@@ -42,9 +44,9 @@
     @include breakpoint-up(mobile) {
       flex: 2;
       order: 1;
+      text-align: left;
     }
     text-align: center;
-    padding: 1rem;
 
     h1 {
       font-weight: 400;
